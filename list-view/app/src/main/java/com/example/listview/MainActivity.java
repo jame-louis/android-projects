@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,11 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayout city_list = findViewById(R.id.city_list);
         for(String city : cities) {
-            TextView tv = new TextView(city_list.getContext());
+            View view = getLayoutInflater().inflate(R.layout.city, city_list, false);
+            TextView tv = view.findViewById(R.id.city_name);
             tv.setText(city);
-            tv.setTextSize(30);
-            tv.setGravity(Gravity.CENTER);
-            tv.setHeight(128);
 
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(tv.getContext(), tv.getText(), Toast.LENGTH_SHORT).show();
                 }
             });
-            city_list.addView(tv);
+            city_list.addView(view);
         }
     }
 }
