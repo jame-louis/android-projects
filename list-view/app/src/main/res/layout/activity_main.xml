@@ -6,46 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:dividerPadding="16dp"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
+            android:id="@+id/city_list"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:gravity="center"
-            android:text="北京"
-            android:textSize="30sp" />
+            android:layout_height="wrap_content"
+            android:dividerPadding="16dp"
+            android:orientation="vertical" />
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:gravity="center"
-            android:text="上海"
-            android:textSize="30sp" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:gravity="center"
-            android:text="广州"
-            android:textSize="30sp" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:gravity="center"
-            android:text="深圳"
-            android:textSize="30sp" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
