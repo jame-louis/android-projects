@@ -5,6 +5,24 @@ import java.util.List;
 
 public class CityData {
 
+    public static class CityInfo {
+        int drawableId;
+        String name;
+
+        CityInfo(int id, String name) {
+            drawableId = id;
+            this.name = name;
+        }
+    };
+
+    public static List<CityInfo> getSampleCityInfos() {
+        return Arrays.asList(
+                new CityInfo(R.drawable.a, "北京"),
+                new CityInfo(R.drawable.b, "上海"),
+                new CityInfo(R.drawable.c, "广州"),
+                new CityInfo(R.drawable.d, "深圳")
+        );
+    }
     // 4个城市：北上广深
     public static List<String> getSampleCities() {
         return Arrays.asList("北京", "上海", "广州", "深圳");
@@ -52,7 +70,6 @@ public class CityData {
                 "香港特别行政区", "澳门特别行政区", "台湾省"
         );
     }
-
     // 如果你只想保留“地级市”（去掉直辖市/州/盟/地区），放开下面这段过滤即可
     /*
     public static List<String> getPrefectureLevelCities() {
